@@ -1,0 +1,6 @@
+:host {
+	display: block;
+}
+
+/* Small helper to ensure anchor covers full card */
+a { text-decoration: none; }

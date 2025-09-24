@@ -1,0 +1,4 @@
+:host { display: block; }
+
+/* Allow the page to take full height when used as the primary route */
+:host > div { min-height: 100vh; }
