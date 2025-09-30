@@ -14,4 +14,6 @@ export class SiteCardComponent {
   @Input() url: string = '#';
   @Input() icon: string = '';
   @Input() imgSrc: string = '';
+
+
 }

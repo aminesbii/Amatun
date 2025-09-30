@@ -1,6 +1,70 @@
-:host {
-	display: block;
+/* Gradient card container */
+.card-container {
+  width:250px;   /* bigger, looks balanced in 4-column grid */
+  min-height: 320px;  /* gives consistent height */
+  background: linear-gradient(
+    to top right,
+    #2c272f,
+    #2b2246 40%,
+    #525686 65%,
+    #261634 100%
+  );
+  padding: 4px;
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+.card-container:hover {
+  transform: translateY(-6px) ;
 }
 
-/* Small helper to ensure anchor covers full card */
-a { text-decoration: none; }
+/* Title bar */
+.card-container .title-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+/* Inner content */
+.card-container .card-content {
+  flex: 1; /* makes content expand evenly */
+  background-color: #161a20;
+  border-radius: 24px;
+  padding: 20px;
+  color: #838383;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+
+
+.card-content .card-btn {
+  background: linear-gradient(
+    4deg,
+    #2b2246 40%,
+    #6346a8 65%,
+    #261634 100%
+  );
+  padding: 10px;
+  border: none;
+  width: 100%;
+  max-width: 220px;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+.card-content .card-btn:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #fff;
+}
