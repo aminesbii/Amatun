@@ -238,6 +238,7 @@ body {
   }
 }
 
+
 .hero-background-elements {
   position: absolute;
   top: 0;
@@ -446,7 +447,7 @@ body {
     #d97706 25%, 
     #ea580c 50%, 
     #dc2626 75%, 
-    #7c3aed 100%);
+    #edd23a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% 200%;
