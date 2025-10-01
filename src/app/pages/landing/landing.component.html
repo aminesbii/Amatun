@@ -2,93 +2,137 @@
 <div class="bg-black text-white min-h-screen overflow-x-hidden relative">
   <!-- Enhanced Animated Background -->
   <div class="fixed inset-0 z-0 overflow-hidden">
-    <div class="absolute w-[800px] h-[800px] bg-orange-500/15 blur-[150px] -top-60 -left-60 rounded-full animate-glow-pulse"></div>
-    <div class="absolute w-[700px] h-[700px] opacity-40 bg-indigo-500/15 blur-[130px] top-1/3 -right-60 rounded-full animate-glow-pulse delay-2000"></div>
-    <div class="absolute w-[600px] h-[600px] opacity-40 bg-purple-500/15 blur-[110px] -bottom-48 left-1/3 rounded-full animate-glow-pulse delay-4000"></div>
-    
+    <div
+      class="absolute w-[800px] h-[800px] bg-orange-500/15 blur-[150px] -top-60 -left-60 rounded-full animate-glow-pulse">
+    </div>
+    <div
+      class="absolute w-[700px] h-[700px] opacity-40 bg-indigo-500/15 blur-[130px] top-1/3 -right-60 rounded-full animate-glow-pulse delay-2000">
+    </div>
+    <div
+      class="absolute w-[600px] h-[600px] opacity-40 bg-purple-500/15 blur-[110px] -bottom-48 left-1/3 rounded-full animate-glow-pulse delay-4000">
+    </div>
+
     <!-- Spotlight Effect -->
     <div class="spotlight-effect"></div>
-    
+
     <!-- Enhanced Grid Background -->
     <div class="absolute inset-0 opacity-[0.03]">
       <div class="enhanced-grid"></div>
     </div>
-    
+
     <!-- Interactive Floating Particles -->
     <div class="absolute inset-0">
-      <div *ngFor="let particle of particles" 
-           class="interactive-particle"
-           [style.top]="particle.top"
-           [style.left]="particle.left"
-           [style.animation-delay]="particle.delay"
-           [style.width]="particle.size"
-           [style.height]="particle.size"
-           [style.background]="particle.color"
-           (mouseenter)="onParticleHover($event)">
+      <div *ngFor="let particle of particles" class="interactive-particle" [style.top]="particle.top"
+        [style.left]="particle.left" [style.animation-delay]="particle.delay" [style.width]="particle.size"
+        [style.height]="particle.size" [style.background]="particle.color" (mouseenter)="onParticleHover($event)">
       </div>
     </div>
   </div>
 
   <!-- Contact Modal -->
-  <div *ngIf="showContactModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-    <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 max-w-md w-full mx-auto transform transition-all duration-500 scale-95 animate-modal-enter">
+  <div *ngIf="showContactModal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div
+      class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 max-w-md w-full mx-auto transform transition-all duration-500 scale-95 animate-modal-enter">
       <div class="flex justify-between items-center mb-6">
         <h3 class="text-2xl font-bold text-white">Contactez-nous</h3>
-        <button (click)="closeContactModal()" class="text-gray-400 hover:text-white transition-colors duration-300 p-2">
+        <button (click)="closeContactModal()"
+          class="text-gray-400 hover:text-white transition-colors duration-300 p-2 rounded-lg hover:bg-white/10">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
-      
+
       <div class="space-y-4">
         <!-- Email -->
-        <a href="mailto:aminesbii2@gmail.com" 
-           class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 group">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-400 flex items-center justify-center">
-            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        <a href="mailto:aminesbii2@gmail.com"
+          class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 group hover:scale-[1.02]">
+          <div
+            class="w-12 h-12 rounded-xl bg-gradient-to-r from-yellow-400 to-red-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           </div>
           <div class="flex-1">
             <p class="text-sm text-gray-400">Email</p>
-            <p class="text-white font-medium group-hover:text-yellow-400 transition-colors">amatun.com</p>
+            <p class="text-white font-medium group-hover:text-red-400 transition-colors">amatun.com</p>
+          </div>
+          <div
+            class="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
           </div>
         </a>
 
         <!-- Facebook -->
         <a href="https://facebook.com/amatun" target="_blank"
-           class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 group">
-          <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
-            <i class="fab fa-facebook-f text-white text-lg"></i>
+          class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 group hover:scale-[1.02]">
+          <div
+            class="w-12 h-12 rounded-xl  bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
           </div>
           <div class="flex-1">
             <p class="text-sm text-gray-400">Facebook</p>
             <p class="text-white font-medium group-hover:text-blue-400 transition-colors">amatun</p>
           </div>
+          <div
+            class="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </div>
         </a>
 
         <!-- Instagram -->
         <a href="https://instagram.com/amatun" target="_blank"
-           class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 group">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-            <i class="fab fa-instagram text-white text-lg"></i>
+          class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 group hover:scale-[1.02]">
+          <div
+            class="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12.017 0C8.396 0 7.986.016 6.756.072 5.526.127 4.712.333 3.995.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.139C.333 4.856.127 5.67.072 6.9.016 8.13 0 8.54 0 12.017c0 3.476.016 3.886.072 5.117.055 1.23.261 2.044.558 2.761.306.789.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.717.297 1.531.503 2.761.558 1.23.056 1.64.072 5.117.072 3.476 0 3.886-.016 5.117-.072 1.23-.055 2.044-.261 2.761-.558.789-.306 1.459-.717 2.126-1.384.666-.667 1.079-1.336 1.384-2.126.297-.717.503-1.531.558-2.761.056-1.23.072-1.64.072-5.117 0-3.476-.016-3.886-.072-5.117-.055-1.23-.261-2.044-.558-2.761-.306-.789-.717-1.459-1.384-2.126C21.319 1.347 20.65.935 19.86.63c-.717-.297-1.531-.503-2.761-.558C15.869.016 15.459 0 12.017 0zm0 2.158c3.403 0 3.788.013 5.005.069 1.175.053 1.811.248 2.237.411.57.217.976.477 1.403.904.427.427.687.833.904 1.403.163.426.358 1.062.411 2.237.056 1.217.069 1.602.069 5.005 0 3.403-.013 3.788-.069 5.005-.053 1.175-.248 1.811-.411 2.237-.217.57-.477.976-.904 1.403-.427.427-.833.687-1.403.904-.426.163-1.062.358-2.237.411-1.217.056-1.602.069-5.005.069-3.403 0-3.788-.013-5.005-.069-1.175-.053-1.811-.248-2.237-.411-.57-.217-.976-.477-1.403-.904-.427-.427-.687-.833-.904-1.403-.163-.426-.358-1.062-.411-2.237-.056-1.217-.069-1.602-.069-5.005 0-3.403.013-3.788.069-5.005.053-1.175.248-1.811.411-2.237.217-.57.477-.976.904-1.403.427-.427.833-.687 1.403-.904.426-.163 1.062-.358 2.237-.411 1.217-.056 1.602-.069 5.005-.069z" />
+              <path
+                d="M12.017 5.838a6.18 6.18 0 1 0 0 12.36 6.18 6.18 0 0 0 0-12.36zm0 10.175a3.995 3.995 0 1 1 0-7.99 3.995 3.995 0 0 1 0 7.99z" />
+              <circle cx="18.406" cy="5.595" r="1.439" />
+            </svg>
           </div>
           <div class="flex-1">
             <p class="text-sm text-gray-400">Instagram</p>
             <p class="text-white font-medium group-hover:text-pink-400 transition-colors">amatun</p>
           </div>
+          <div
+            class="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </div>
         </a>
 
         <!-- LinkedIn -->
         <a href="https://linkedin.com/company/amatun" target="_blank"
-           class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 group">
-          <div class="w-12 h-12 rounded-xl bg-blue-500 flex items-center justify-center">
-            <i class="fab fa-linkedin-in text-white text-lg"></i>
+          class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 group hover:scale-[1.02]">
+          <div
+            class="w-12 h-12 rounded-xl bg-gradient-to-r from-indigo-500 to-emerald-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
           </div>
           <div class="flex-1">
             <p class="text-sm text-gray-400">LinkedIn</p>
-            <p class="text-white font-medium group-hover:text-blue-300 transition-colors">AMATUN</p>
+            <p class="text-white font-medium group-hover:text-emerald-300 transition-colors">AMATUN</p>
+          </div>
+          <div
+            class="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
           </div>
         </a>
       </div>
@@ -96,50 +140,68 @@
   </div>
 
   <!-- Enhanced Navigation -->
-  <nav class="nav-wrapper fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-gradient-to-b from-black to-transparent" 
-       [class.scrolled]="isScrolled">
+  <nav
+    class="nav-wrapper fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-gradient-to-b from-black to-transparent"
+    [class.scrolled]="isScrolled">
     <div class="py-4 px-6 sm:px-12 transition-all duration-300">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center group cursor-pointer" (click)="scrollToSection('home')">
-          <img src="Amatun.png" alt="Amatun Logo" 
-               class="h-10 sm:h-12 object-contain transform transition-all duration-300 group-hover:scale-110">
+          <img src="Amatun.png" alt="Amatun Logo"
+            class="h-10 sm:h-12 object-contain transform transition-all duration-300 group-hover:scale-110">
         </div>
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
-          <a *ngFor="let item of navItems" 
-             [href]="item.href"
-             (click)="scrollToSection(item.href.slice(1)); $event.preventDefault()"
-             class="nav-link text-sm font-medium tracking-wide transition-all duration-300"
-             [class.text-yellow-400]="activeSection === item.href.slice(1)">
+          <a *ngFor="let item of navItems" [href]="item.href"
+            (click)="scrollToSection(item.href.slice(1)); $event.preventDefault()"
+            class="nav-link text-sm font-medium tracking-wide transition-all duration-300"
+            [class.text-yellow-400]="activeSection === item.href.slice(1)">
             {{ item.label }}
             <span class="nav-underline" [class.active]="activeSection === item.href.slice(1)"></span>
           </a>
-          <button (click)="openContactModal()" class="cta-button-primary text-sm font-semibold px-5 py-2 rounded-full transition-all duration-300 transform hover:scale-105">
+          <button (click)="openContactModal()"
+            class="cta-button-primary text-sm font-semibold px-5 py-2 rounded-full transition-all duration-300 transform hover:scale-105">
             Contact Us
           </button>
         </div>
 
         <!-- Mobile Navigation -->
         <div class="md:hidden flex items-center space-x-4">
-          <button (click)="openContactModal()" class="cta-button-primary text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300">
+          <button (click)="openContactModal()"
+            class="cta-button-primary text-sm font-semibold px-4 py-2 rounded-full transition-all duration-300">
             Contact
           </button>
-          <button (click)="toggleMobileMenu()" class="text-white hover:text-yellow-400 transition-colors duration-300 p-2 rounded-lg bg-white/5 backdrop-blur-sm">
-            <i class="fas fa-bars text-lg"></i>
+          <button (click)="toggleMobileMenu()"
+            [attr.aria-expanded]="isMobileMenuOpen"
+            aria-controls="mobile-menu"
+            class="text-white hover:text-yellow-400 transition-colors duration-300 p-2 bg-white/5 backdrop-blur-sm relative flex items-center justify-center px-3 h-10 rounded-xl w-auto">
+            <!-- Hamburger Icon -->
+            <div class="w-6 h-6 relative">
+              <span
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-0.5 bg-current transition-all duration-300"
+                [class]="isMobileMenuOpen ? 'rotate-45 top-1/2' : 'top-1/4'">
+              </span>
+              <span
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-0.5 bg-current transition-all duration-300"
+                [class]="isMobileMenuOpen ? 'opacity-0' : 'opacity-100'">
+              </span>
+              <span
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-0.5 bg-current transition-all duration-300"
+                [class]="isMobileMenuOpen ? '-rotate-45 top-1/2' : 'top-3/4'">
+              </span>
+            </div>
           </button>
         </div>
       </div>
 
-      <!-- Mobile Menu -->
-      <div *ngIf="isMobileMenuOpen" class="md:hidden mt-4 pb-4 border-t border-white/10 pt-4">
-        <div class="flex flex-col space-y-4">
-          <a *ngFor="let item of navItems" 
-             [href]="item.href"
-             (click)="scrollToSection(item.href.slice(1)); $event.preventDefault(); toggleMobileMenu()"
-             class="nav-link-mobile text-base font-medium py-2 transition-all duration-300"
-             [class.text-yellow-400]="activeSection === item.href.slice(1)">
+      <!-- Mobile Menu (animated: uses class to open/close) -->
+      <div id="mobile-menu" class="md:hidden mt-4 pb-4 border-t border-white/10 pt-4 bg-black/90 px-5 mobile-menu" [class.open]="isMobileMenuOpen" [attr.aria-hidden]="!isMobileMenuOpen">
+        <div class="flex flex-col space-y-2">
+          <a *ngFor="let item of navItems" [href]="item.href"
+            (click)="scrollToSection(item.href.slice(1)); $event.preventDefault(); toggleMobileMenu()"
+            class="nav-link-mobile text-base font-medium py-3 px-3 transition-all duration-300 relative"
+            [class.mobile-active]="activeSection === item.href.slice(1)">
             {{ item.label }}
           </a>
         </div>
@@ -147,8 +209,7 @@
     </div>
   </nav>
 
-  <!-- Enhanced Hero Section -->
-  <!-- Redesigned Hero Section -->
+  <!-- Enhanced Hero Section - No Fade Out -->
   <section id="home" class="hero-section relative z-10 pt-32 pb-20 px-6 sm:px-8 lg:px-12 overflow-hidden">
     <div class="max-w-6xl mx-auto">
       <!-- Animated Background Elements -->
@@ -159,167 +220,175 @@
       </div>
 
       <!-- Redesigned Title - No Fade Out -->
-      <div class="hero-title-wrapper mb-8 scroll-animate" data-index="0">
-        <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight goldman text-center">
+      <div class="hero-title-wrapper mb-8">
+        <h1
+          class="hero-title text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-tight goldman text-center">
           <span class="title-line block overflow-hidden">
-            <span class="character-reveal" [style.animation-delay]="getCharacterDelay(i)" 
-                  *ngFor="let char of 'AMATUN'.split(''); let i = index">
-              {{ char === ' ' ? '&nbsp;' : char }}
-            </span>
-          </span>
-          <span class="title-line block mt-1 sm:mt-2 overflow-hidden">
-            <span class="character-reveal delay-1" [style.animation-delay]="getCharacterDelay(i + 7)" 
-                  *ngFor="let char of 'DIGITAL ECOSYSTEM'.split(''); let i = index">
+            <span class="character-reveal gradient-text" [style.animation-delay]="getCharacterDelay(i)"
+              *ngFor="let char of 'AMATUN'.split(''); let i = index">
               {{ char === ' ' ? '&nbsp;' : char }}
             </span>
           </span>
         </h1>
+        <h2  class="hero-title text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight tracking-tight goldman text-center">
+          <span class="title-line block mt-1 sm:mt-2 overflow-hidden">
+            <span class="character-reveal delay-1" [style.animation-delay]="getCharacterDelay(i + 7)"
+              *ngFor="let char of 'DIGITAL ECOSYSTEM'.split(''); let i = index">
+              {{ char === ' ' ? '&nbsp;' : char }}
+            </span>
+          </span></h2>
       </div>
-      
+
       <!-- Enhanced Subtitle -->
-      <div class="subtitle-reveal mb-12 max-w-2xl mx-auto scroll-animate" data-index="1">
+      <div class="subtitle-reveal-delay mb-12 max-w-2xl mx-auto">
         <p class="text-sm sm:text-lg lg:text-lg text-gray-400 leading-relaxed tracking-wide font-light text-center">
-          Une plateforme complète pour le commerce, l'apprentissage et l'information. Découvrez nos services innovants conçus pour votre succès digital.
+          Une plateforme complète pour le commerce, l'apprentissage et l'information. Découvrez nos services innovants
+          conçus pour votre succès digital.
         </p>
       </div>
 
-      
+      <!-- CTA Buttons -->
+      <div class="subtitle-reveal-delay flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+        <button (click)="scrollToSection('services')"
+          class="cta-button-primary text-base font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+          Nos services
+        </button>
+        <button (click)="openContactModal()"
+          class="cta-button-secondary text-base font-medium px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 group">
+          Nous contacter
+        </button>
+      </div>
+
       <!-- Interactive Stats Section -->
-      <div class="hero-stats mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto scroll-animate" data-index="3">
-        <div class="stat-card text-center p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:bg-white/10">
-          <div class="stat-number text-2xl font-bold text-yellow-400 mb-1">50K+</div>
-          <div class="stat-label text-sm text-gray-400">Utilisateurs</div>
+      <div class="subtitle-reveal-delay hero-stats mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+        <div
+          class=" stat-card text-center p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-white/20 cursor-pointer group">
+          <div
+            class="stat-number text-2xl font-bold gradient-text mb-1 group-hover:scale-110 transition-transform duration-300">
+            50K+</div>
+          <div class="stat-label text-sm text-gray-400 group-hover:text-white transition-colors">Utilisateurs</div>
         </div>
-        <div class="stat-card text-center p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:bg-white/10">
-          <div class="stat-number text-2xl font-bold text-yellow-400 mb-1">4</div>
-          <div class="stat-label text-sm text-gray-400">Platforms</div>
+        <div
+          class="stat-card text-center p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-white/20 cursor-pointer group">
+          <div
+            class="stat-number text-2xl font-bold gradient-text mb-1 group-hover:scale-110 transition-transform duration-300">
+            4</div>
+          <div class="stat-label text-sm text-gray-400 group-hover:text-white transition-colors">Platforms</div>
         </div>
-        <div class="stat-card text-center p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:bg-white/10">
-          <div class="stat-number text-2xl font-bold text-yellow-400 mb-1">99%</div>
-          <div class="stat-label text-sm text-gray-400">Satisfaction</div>
+        <div
+          class="stat-card text-center p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-white/20 cursor-pointer group">
+          <div
+            class="stat-number text-2xl font-bold gradient-text mb-1 group-hover:scale-110 transition-transform duration-300">
+            99%</div>
+          <div class="stat-label text-sm text-gray-400 group-hover:text-white transition-colors">Satisfaction</div>
         </div>
-        <div class="stat-card text-center p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:bg-white/10">
-          <div class="stat-number text-2xl font-bold text-yellow-400 mb-1">24/7</div>
-          <div class="stat-label text-sm text-gray-400">Support</div>
+        <div
+          class="stat-card text-center p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-white/20 cursor-pointer group">
+          <div
+            class="stat-number text-2xl font-bold gradient-text mb-1 group-hover:scale-110 transition-transform duration-300">
+            24/7</div>
+          <div class="stat-label text-sm text-gray-400 group-hover:text-white transition-colors">Support</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Redesigned Services Section -->
+  <section id="services" class="relative z-10 py-20 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto">
+      <!-- Enhanced Section Header -->
+      <div class="text-center mb-16">
+        <div class="title-reveal mb-4">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
+            Découvrez nos services
+          </h2>
+        </div>
+        <div class="subtitle-reveal-delay max-w-2xl mx-auto">
+          <p class="text-base text-gray-400 leading-relaxed tracking-wide">
+            Une gamme complète de services conçus pour répondre à tous vos besoins digitaux avec innovation et
+            excellence.
+          </p>
+        </div>
+      </div>
 
-<!-- Enhanced Services Section -->
-<section id="services" class="relative z-10 py-20 px-6 sm:px-8 lg:px-12">
-  <div class="max-w-7xl mx-auto">
-    <!-- Enhanced Section Header -->
-    <div class="text-center mb-16">
-      <div class="section-badge-reveal inline-block scroll-animate" data-index="0">
-      </div>
-      <div class="title-reveal mt-8 mb-4 scroll-animate" data-index="1">
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
-          Découvrez nos <span class="gradient-text">services</span>
-        </h2>
-      </div>
-      <div class="subtitle-reveal-delay max-w-2xl mx-auto scroll-animate" data-index="2">
-        <p class="text-base text-gray-400 leading-relaxed tracking-wide">
-          Une gamme complète de services conçus pour répondre à tous vos besoins digitaux avec innovation et excellence.
-        </p>
-      </div>
-    </div>
+      <!-- Redesigned Services Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <ng-container *ngFor="let service of filteredServices; let i = index">
+          <div
+            class="service-card hover:translate-y-2 scroll-animate relative flex flex-col h-full p-6 rounded-2xl border border-gray-700 text-white transition-all duration-500 group overflow-hidden cursor-pointer"
+            [ngClass]="getSimpleGradient(service)" [attr.data-index]="i" (click)="!service.comingSoon && onServiceCardClick(service)" [class.is-coming-soon]="service.comingSoon">
 
-    <!-- Enhanced Services Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-      <ng-container *ngFor="let service of filteredServices; let i = index">
-        <div 
-          class="service-card scroll-animate relative flex flex-col items-center justify-between h-full p-8 rounded-3xl backdrop-blur-xl border border-white/20 text-white transition-all duration-700 group overflow-hidden shadow-2xl"
-          [ngClass]="getGradient(service)"
-          [attr.data-index]="i">
-          
-          <!-- Premium Glass Morphism Overlay -->
-          <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm z-0"></div>
-          
-          <!-- Enhanced Animated Border -->
-          <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-1000 z-10"></div>
-          
-          <!-- Premium Hover Glow Effect -->
-          <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-2xl z-0" [ngClass]="getGradient(service) + ' bg-opacity-20'"></div>
-          
-          <!-- Premium Floating Icon Container -->
-          <div class="icon-float mb-8 flex justify-center transform group-hover:scale-110 transition-transform duration-500 z-20">
-            <div class="relative">
-              <!-- Icon Background Glow -->
-              <div class="absolute inset-0 rounded-2xl blur-xl transform scale-125 opacity-60 group-hover:opacity-100 transition-all duration-500" [ngClass]="getGradient(service)"></div>
-              
-              <!-- Premium Icon Container -->
-              <div class="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 transform group-hover:rotate-3 transition-all duration-500 z-30">
-                <img [src]="service.image" [alt]="service.title" 
-                     class="w-16 h-16 object-contain filter drop-shadow-lg" 
-                     (load)="onImageLoad()"
-                     (error)="onImageError(service)"/>
+            <!-- Simple Background Gradient -->
+            <div class="absolute inset-0 rounded-2xl transition-all duration-500 group-hover:opacity-90 "
+              [ngClass]="getSimpleGradient(service)"></div>
+
+            <!-- Card Content: centered icon above title -->
+            <div class="relative z-10 flex flex-col items-center text-center h-full">
+              <!-- Large centered icon -->
+              <div class="mb-4">
+                <div class="service-icon-center w-20 h-20 rounded-xl bg-white/8 backdrop-blur-sm border border-white/10 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                  <img [src]="service.image" [alt]="service.title" class="w-16 h-16 object-contain" (error)="onImageError(service)" />
+                </div>
               </div>
-            </div>
-          </div>
-          
-          <!-- Premium Coming Soon Overlay -->
-          <div *ngIf="service.comingSoon" class="absolute inset-0 flex flex-col items-center justify-center z-40 rounded-3xl">
-            <div class="absolute inset-0 bg-black/80 backdrop-blur-xl rounded-3xl"></div>
-            <div class="relative z-50 text-center p-6">
-              <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-gray-400 to-gray-600 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm0 0V7a4 4 0 018 0v8"/>
-                </svg>
-              </div>
-              <span class="flex items-center gap-2 bg-gradient-to-r from-gray-600 to-gray-700 text-white text-sm font-semibold px-6 py-3 rounded-full border border-white/20 shadow-lg">
-                Bientôt disponible
-              </span>
-            </div>
-          </div>
-          
-          <!-- Premium Card Content -->
-          <div class="relative z-30 flex flex-col items-center h-full w-full text-center">
-            <!-- Text Content -->
-            <div class="flex-grow flex flex-col items-center justify-center w-full mb-8">
-              <h3 class="text-xl sm:text-2xl font-bold mb-6 leading-tight w-full service-title tracking-wide text-white drop-shadow-lg">
-                {{ service.title }}
-              </h3>
-              <p class="text-sm sm:text-base text-gray-200 leading-relaxed max-w-xs service-description tracking-wide font-light">
+
+              <!-- Title beneath icon -->
+              <h3 class="text-xl font-bold text-white mb-2">{{ service.title }}</h3>
+              <p class="text-sm text-white/80 mb-4 max-w-xs">
                 {{ service.description }}
               </p>
+
+              <!-- Service Stats -->
+              <div class="service-stats grid grid-cols-3 gap-3 mb-4">
+                <div class="stat-item text-center">
+                  <div class="stat-value text-white font-bold text-sm">{{ getServiceStats(service.title).users }}</div>
+                  <div class="stat-label text-gray-400 text-xs">Utilisateurs</div>
+                </div>
+                <div class="stat-item text-center">
+                  <div class="stat-value text-white font-bold text-sm">{{ getServiceStats(service.title).products }}
+                  </div>
+                  <div class="stat-label text-gray-400 text-xs">Produits</div>
+                </div>
+                <div class="stat-item text-center">
+                  <div class="stat-value text-white font-bold text-sm">{{ getServiceStats(service.title).rating }}</div>
+                  <div class="stat-label text-gray-400 text-xs">Évaluation</div>
+                </div>
+              </div>
+
+              <!-- Simple Button -->
+              <div class="mt-auto">
+                <button (click)="onServiceCardClick(service)" [disabled]="service.comingSoon"
+                  class="simple-service-button w-full inline-flex items-center justify-center px-4 py-3 rounded-xl font-medium transition-all duration-300 relative overflow-hidden"
+                  [ngClass]="getSimpleGradient(service)">
+
+                  <span class="relative z-10 tracking-wide text-sm font-medium flex items-center justify-center gap-2">
+                    {{ service.comingSoon ? 'Bientôt disponible' : 'Explorer' }}
+                    <svg *ngIf="!service.comingSoon"
+                      class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none"
+                      stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13.5 4.5L21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                  </span>
+                </button>
+              </div>
             </div>
-            
-            <!-- Premium Button -->
-            <div class="w-full max-w-xs">
-              <button 
-                (click)="onServiceCardClick(service)"
-                [disabled]="service.comingSoon"
-                class="service-button w-full inline-flex items-center justify-center px-6 py-4 rounded-xl font-semibold backdrop-blur-lg transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl border border-white/20 relative overflow-hidden"
-                [ngClass]="{
-                  'bg-white/15 hover:bg-white/25 text-white shadow-xl hover:shadow-white/30': !service.comingSoon, 
-                  'bg-gray-600/40 text-gray-300 cursor-not-allowed': service.comingSoon
-                }">
-                
-                <!-- Button Glow Effect -->
-                <div *ngIf="!service.comingSoon" class="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-700"></div>
-                
-                <span class="relative z-10 tracking-wide text-sm font-medium">
-                  {{ service.comingSoon ? 'Bientôt disponible' : 'Explorer' }}
-                </span>
-                <svg *ngIf="!service.comingSoon" class="ml-3 w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0-7.5 7.5M21 12H3" />
-                </svg>
-              </button>
+
+            <!-- Coming Soon Overlay: covers card and shows only large faint icon + service name -->
+            <div *ngIf="service.comingSoon" class="coming-soon-overlay">
+              <!-- Large faint background icon -->
+              <img [src]="service.image" [alt]="service.title + ' icon'" class="overlay-bg-icon" />
+              <div class="coming-soon-inner">
+                <h3 class="coming-title">{{ service.title }}</h3>
+                <div class="coming-soon-badge bg-gradient-to-r from-emerald-400 to-green-500 text-black px-3 py-1 rounded-full text-xs font-semibold mb-2">
+                  Bientôt disponible
+                </div>
+              </div>
             </div>
           </div>
-          
-          <!-- Premium Corner Accents -->
-          <div class="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-white/30 rounded-tl-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-white/30 rounded-tr-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-white/30 rounded-bl-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-white/30 rounded-br-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
-        </div>
-      </ng-container>
+        </ng-container>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Enhanced Features Section -->
   <section id="features" class="relative z-10 py-16 px-6 sm:px-8 lg:px-12">
@@ -334,19 +403,23 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-        <div *ngFor="let feature of serviceFeatures; let i = index" 
-             class="feature-card scroll-animate flex flex-col items-start gap-6 p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 transition-all duration-500 hover:border-white/30 hover:transform hover:-translate-y-2"
-             [attr.data-index]="i">
-          
-          <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br shadow-lg transform transition-transform duration-300 group-hover:scale-110"
-               [ngClass]="feature.iconGradient">
+        <div *ngFor="let feature of serviceFeatures; let i = index"
+          class="feature-card scroll-animate flex flex-col items-start gap-6 p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 transition-all duration-500 hover:border-white/30 hover:transform hover:-translate-y-2 cursor-pointer"
+          [attr.data-index]="i">
+
+          <div
+            class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br shadow-lg transform transition-transform duration-300 group-hover:scale-110"
+            [ngClass]="feature.iconGradient">
             <img [src]="feature.icon" [alt]="feature.title" class="w-6 h-6 object-contain" />
           </div>
-          
+
           <h3 class="text-xl font-bold feature-title tracking-wide">{{ feature.title }}</h3>
-          <p class="text-gray-300 text-sm leading-relaxed feature-description tracking-wide">{{ feature.description }}</p>
-          
-          <div class="feature-line mt-2 w-8 h-1 bg-gradient-to-r rounded-full opacity-50 transform transition-all duration-300 group-hover:opacity-100 group-hover:w-12"></div>
+          <p class="text-gray-300 text-sm leading-relaxed feature-description tracking-wide">{{ feature.description }}
+          </p>
+
+          <div
+            class="feature-line mt-2 w-8 h-1 bg-gradient-to-r rounded-full opacity-50 transform transition-all duration-300 group-hover:opacity-100 group-hover:w-12">
+          </div>
         </div>
       </div>
     </div>
@@ -354,51 +427,58 @@
 
   <!-- CTA Section -->
   <section class="relative z-10 py-16 px-6 sm:px-8 lg:px-12">
-          <!-- Website Mockup -->
-      <div class="website-mockup scroll-animate mb-8 cursor-pointer" data-index="2">
-        <div class="max-w-4xl mx-auto">
-          <div class="mockup-container bg-black/50 backdrop-blur-xl border border-white/10 rounded-3xl p-6 transform transition-all duration-500 hover:border-white/20">
-            <div class="mockup-header flex items-center gap-3 mb-4">
-              <div class="flex gap-2">
-                <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div class="w-3 h-3 rounded-full bg-green-500"></div>
-              </div>
-              <div class="flex-1 text-center">
-                <span class="text-sm text-gray-400 font-medium">https://dfsteam.site</span>
-              </div>
+    <!-- Website Mockup -->
+    <div class="website-mockup scroll-animate mb-8 cursor-pointer" data-index="2">
+      <div class="max-w-4xl mx-auto">
+        <div
+          class="mockup-container bg-black/50 backdrop-blur-xl border border-white/10 rounded-3xl p-6 transform transition-all duration-500 hover:border-white/20">
+          <div class="mockup-header flex items-center gap-3 mb-4">
+            <div class="flex gap-2">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
-            
-            <div class="mockup-content bg-black rounded-2xl border border-white/5 overflow-hidden">
-              <div class="mockup-screen bg-gradient-to-br from-orange-900 to-black p-8 min-h-[200px] flex items-center justify-center">
-                <div class="text-center">
-                  <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-yellow-400 to-orange-400 flex items-center justify-center">
-                    <img src="DFS.png" alt="DFS" class="w-10 h-10 object-contain">
-                  </div>
-                  <h3 class="text-xl font-bold text-white mb-2">DEV FLOW STUDIO</h3>
-                  <p class="text-gray-400 text-sm">Boite De Développement Professionnelle</p>
+            <div class="flex-1 text-center">
+              <span class="text-sm text-gray-400 font-medium">https://dfsteam.site</span>
+            </div>
+          </div>
+
+          <div class="mockup-content bg-black rounded-2xl border border-white/5 overflow-hidden">
+            <div
+              class="mockup-screen bg-gradient-to-br from-orange-900 to-black p-8 min-h-[200px] flex items-center justify-center">
+              <div class="text-center">
+                <div
+                  class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-yellow-400 to-orange-400 flex items-center justify-center">
+                  <img src="DFS.png" alt="DFS" class="w-10 h-10 object-contain">
                 </div>
+                <h3 class="text-xl font-bold text-white mb-2">DEV FLOW STUDIO</h3>
+                <p class="text-gray-400 text-sm">Ces Platforms Réalisent Par Une Boite De Développement Professionnelle</p>
               </div>
             </div>
-            
-            <div class="mt-6">
-              <a href="https://ngdteam.com/" target="_blank" 
-                 class="cta-button-primary w-full text-base font-semibold px-8 py-4 rounded-full transition-all duration-300 transform group relative overflow-hidden inline-flex items-center justify-center">
-                <span class="relative z-10 flex items-center">
-                  Visiter DFS.com
-                  <svg class="ml-3 w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                  </svg>
-                </span>
-                <div class="button-sparkle"></div>
-                <div class="button-glow"></div>
-              </a>
-            </div>
+          </div>
+
+          <div class="mt-6">
+            <a href="https://devflowstudio.site/" target="_blank"
+              class="cta-button-primary w-full text-base font-semibold px-8 py-4 rounded-full transition-all duration-300 transform group relative overflow-hidden inline-flex items-center justify-center">
+              <span class="relative z-10 flex items-center">
+                DevFlowStudio.site
+                <svg class="ml-3 w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </span>
+              <div class="button-sparkle"></div>
+              <div class="button-glow"></div>
+            </a>
           </div>
         </div>
       </div>
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="cta-card scroll-animate bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 transform transition-all duration-500 hover:border-white/20">
+    </div>
+
+    <!-- <div class="max-w-4xl mx-auto text-center">
+      <div
+        class="cta-card scroll-animate bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 transform transition-all duration-500 hover:border-white/20">
         <h2 class="text-3xl sm:text-4xl font-bold mb-6 title-reveal tracking-tight">
           Prêt à transformer votre expérience digitale ?
         </h2>
@@ -406,23 +486,29 @@
           Rejoignez des milliers d'utilisateurs qui ont déjà découvert la puissance de l'écosystème AMATUN.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center button-group-reveal">
-          <button class="cta-button-primary text-base font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+          <button
+            class="cta-button-primary text-base font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
             Commencer l'essai gratuit
           </button>
-          <button class="cta-button-secondary text-base font-medium px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 group">
+          <button
+            class="cta-button-secondary text-base font-medium px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 group">
             Voir les tarifs
             <span class="button-arrow">→</span>
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
 
   <!-- Enhanced Footer -->
   <footer class="relative bg-black text-white py-16 overflow-hidden">
     <!-- Background Glow Effects -->
-    <div class="absolute w-[500px] h-[500px] opacity-20 bg-orange-400/25 blur-[200px] -top-40 -left-40 rounded-full z-0 animate-glow-pulse"></div>
-    <div class="absolute w-[500px] h-[500px] opacity-20 bg-yellow-400/20 blur-[200px] -bottom-40 -right-40 rounded-full z-0 animate-glow-pulse delay-3000"></div>
+    <div
+      class="absolute w-[500px] h-[500px] opacity-20 bg-orange-400/25 blur-[200px] -top-40 -left-40 rounded-full z-0 animate-glow-pulse">
+    </div>
+    <div
+      class="absolute w-[500px] h-[500px] opacity-20 bg-yellow-400/20 blur-[200px] -bottom-40 -right-40 rounded-full z-0 animate-glow-pulse delay-3000">
+    </div>
 
     <!-- Content Container -->
     <div class="relative max-w-7xl mx-auto px-6 sm:px-12 z-10">
@@ -430,10 +516,10 @@
       <div class="grid md:grid-cols-2 gap-12 mb-16">
         <!-- Message Form -->
         <div>
-          <h3 class="text-xl font-semibold mb-6  tracking-tight">Envoyer un message</h3>
+          <h3 class="text-xl font-semibold mb-6 tracking-tight">Envoyer un message</h3>
           <form class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
             <input type="text" placeholder="Votre message..."
-              class="flex-1 w-full px-4 py-3 rounded-full bg-white/10 border border-white/20 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-orange-500 transition tracking-wide text-sm" />
+              class="flex-1 w-full px-4 py-3 rounded-full bg-white/10 border border-white/20 placeholder-white/70 text-white focus:outline-none focus:ring-1 focus:ring-yellow-500 transition tracking-wide text-sm" />
             <button type="submit"
               class="px-6 py-3 bg-gradient-to-r text-black from-yellow-400 to-orange-400 rounded-full hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 transform hover:scale-105 font-medium tracking-wide text-sm">
               Envoyer
@@ -445,7 +531,8 @@
         <div>
           <h3 class="text-xl font-semibold mb-6 tracking-tight">À propos</h3>
           <p class="text-gray-400 leading-relaxed tracking-wide text-base">
-            AMATUN regroupe shopping, apprentissage et actualité pour une expérience unifiée et fluide sur une seule plateforme.
+            AMATUN regroupe shopping, apprentissage et actualité pour une expérience unifiée et fluide sur une seule
+            plateforme.
           </p>
         </div>
       </div>
@@ -455,11 +542,11 @@
 
       <!-- Bottom Bar -->
       <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
-        <p class="text-gray-400 tracking-wide">&copy; 2025 <span class="font-semibold text-white">AMATUN</span>. Tous droits réservés.</p>
+        <p class="text-gray-400 tracking-wide">&copy; 2025 <span class="font-semibold text-white">AMATUN</span>. Tous
+          droits réservés.</p>
         <div class="flex gap-6">
-          <a *ngFor="let social of socialLinks" 
-             [href]="social.url"
-             class="social-link text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 flex items-center gap-2 tracking-wide">
+          <a *ngFor="let social of socialLinks" [href]="social.url"
+            class="social-link text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 flex items-center gap-2 tracking-wide">
             <i [class]="social.icon"></i>
             {{ social.name }}
           </a>

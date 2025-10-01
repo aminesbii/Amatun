@@ -86,37 +86,32 @@ export class LandingComponent implements OnInit, OnDestroy {
   services = [
     {
       title: 'AMATUN SHOP',
-      description: 'Découvrez notre collection de produits sélectionnés',
       image: 'Shop.png',
       link: '/home',
-      linkText: 'En savoir plus',
-      gradient: 'from-orange-500/20 via-red-500/20 to-yellow-400/20'
+      linkText: 'Explorer la boutique',
+      gradient: 'from-orange-500 via-red-500 to-yellow-400'
     },
     {
       title: 'AMATUN CARS',
-      description: 'Services de livraison rapides et fiables',
       image: 'Cars.png',
       link: 'http://192.168.1.155:4200/home',
-      linkText: 'Discover more',
-      gradient: 'from-blue-500/20 via-blue-600/20 to-blue-700/20'
+      linkText: 'Découvrir les véhicules',
+      gradient: 'from-blue-500 via-indigo-600 to-blue-400'
     },
     {
       title: 'AMATUN LEARN',
-      description: 'Améliorez vos compétences avec notre contenu éducatif',
       image: 'Learn.png',
       link: 'https://learn.amatun.com/',
-      linkText: 'En savoir plus',
-      gradient: 'from-purple-500/20 via-pink-400/20 to-blue-400/20'
+      linkText: 'Commencer à apprendre',
+      gradient: 'from-purple-500 via-pink-400 to-blue-400'
     },
     {
       title: 'AMATUN MAG',
-      description: 'Découvrez les derniers articles, actualités et tendances',
       image: 'Mag.png',
       link: 'https://mag.amatun.com/',
-      linkText: 'En savoir plus',
-      gradient: 'from-teal-600/20 via-green-500/20 to-lime-400/20',
-      comingSoon: true,
-      isGray: true,
+      linkText: 'Lire les articles',
+      gradient: 'from-teal-600 via-green-500 to-lime-400',
+      comingSoon: true
     }
   ];
 
@@ -153,28 +148,29 @@ export class LandingComponent implements OnInit, OnDestroy {
     }
   }
 
-
-getGradient(service: any): string {
-  // Find the matching service feature
-  const serviceFeature = this.serviceFeatures.find(feature => 
-    feature.title === service.title
-  );
-  
-  if (serviceFeature) {
-    // Return the premium gradient classes for the card background
+  // Enhanced service card gradient mapping - Simple version
+  getSimpleGradient(service: any): string {
     const gradientMap: { [key: string]: string } = {
-      'AMATUN SHOP': 'from-amber-500/20 via-orange-500/25 to-yellow-400/20 shadow-amber-500/25',
-      'AMATUN CARS': 'from-blue-500/20 via-indigo-500/25 to-purple-500/20 shadow-blue-500/25',
-      'AMATUN LEARN': 'from-indigo-500/20 via-purple-500/25 to-pink-500/20 shadow-indigo-500/25',
-      'AMATUN MAG': 'from-teal-500/20 via-emerald-500/25 to-green-400/20 shadow-teal-500/25'
+      'AMATUN SHOP': 'gradient-shop',
+      'AMATUN CARS': 'gradient-cars',
+      'AMATUN LEARN': 'gradient-learn',
+      'AMATUN MAG': 'gradient-mag'
     };
     
-    return `bg-gradient-to-br ${gradientMap[service.title] || 'from-gray-700/20 to-gray-900/20'}`;
+    return gradientMap[service.title] || 'gradient-default';
   }
-  
-  // Premium default gradient
-  return 'bg-gradient-to-br from-slate-700/20 via-gray-800/25 to-zinc-900/20 shadow-gray-500/20';
-}
+
+  // Service statistics data
+  getServiceStats(serviceTitle: string): { users: string, products: string, rating: string } {
+    const statsMap: { [key: string]: { users: string, products: string, rating: string } } = {
+      'AMATUN SHOP': { users: '25K+', products: '10K+', rating: '4.8' },
+      'AMATUN CARS': { users: '15K+', products: '5K+', rating: '4.7' },
+      'AMATUN LEARN': { users: '8K+', products: '200+', rating: '4.9' },
+     // 'AMATUN MAG': { users: '12K+', products: '1K+', rating: '4.6' }
+    };
+    
+    return statsMap[serviceTitle] || { users: '1K+', products: '100+', rating: '4.5' };
+  }
 
   // Contact Modal Methods
   openContactModal(): void {
@@ -197,7 +193,8 @@ getGradient(service: any): string {
     const allImages = [
       ...this.services.map(s => s.image),
       ...this.serviceFeatures.map(f => f.icon),
-      'Amatun.png' // Logo
+      'Amatun.png', // Logo
+      'DFS.png' // Mockup image
     ];
     
     this.totalImages = allImages.length;
@@ -256,8 +253,7 @@ getGradient(service: any): string {
     service.image = 'assets/images/default-service.png';
   }
 
-
-    setupScrollAnimations(): void {
+  setupScrollAnimations(): void {
     const observerOptions = {
       threshold: 0.15,
       rootMargin: '0px 0px -80px 0px'
@@ -294,11 +290,10 @@ getGradient(service: any): string {
       });
     }, observerOptions);
 
-    // Observe all scroll-animated elements including hero section
+    // Observe all scroll-animated elements
     const animatedElements = document.querySelectorAll('.scroll-animate');
     animatedElements.forEach(el => this.intersectionObserver.observe(el));
   }
-
 
   // Particle interaction
   onParticleHover(event: MouseEvent): void {
@@ -313,8 +308,6 @@ getGradient(service: any): string {
       particle.style.filter = '';
     }, 300);
   }
-
-
 
   updateActiveSection(): void {
     const sections = ['home', 'services', 'features'];
@@ -367,8 +360,6 @@ getGradient(service: any): string {
       this.updateActiveSection();
     }, 10);
   }
-
-
 
   // Section observer for header animations
   setupSectionObserver(): void {
@@ -449,8 +440,6 @@ getGradient(service: any): string {
       clearTimeout(this.scrollTimeout);
     }
   }
-
-  // Existing methods...
 
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
