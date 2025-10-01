@@ -1,14 +1,14 @@
-# Étape 1 : récupérer l'image Nginx officielle
+# Étape 1 : build Angular
+FROM node:18 AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build --prod
+
+# Étape 2 : serveur Nginx pour servir l’application
 FROM nginx:alpine
-
-# Copier les fichiers Angular buildés dans Nginx
-COPY ./dist/amatun-home /usr/share/nginx/html
-
-# Copier la config Nginx pour Angular (gestion du routing)
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-
-# Exposer le port 80
+COPY --from=build /app/dist/amatun /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
-
-# Démarrer Nginx
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
