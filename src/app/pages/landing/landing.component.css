@@ -461,37 +461,37 @@ body {
 /* Enhanced Gradient Backgrounds */
 .gradient-shop {
   background: linear-gradient(135deg, 
-    rgba(251, 191, 36, 0.15) 0%, 
-    rgba(245, 158, 11, 0.2) 50%, 
-    rgba(234, 88, 12, 0.15) 100%);
+    rgba(251, 191, 36, 0.2) 0%, 
+    rgba(245, 158, 11, 0.25) 50%, 
+    rgba(234, 88, 12, 0.2) 100%);
 }
 
 .gradient-cars {
   background: linear-gradient(135deg, 
-    rgba(59, 130, 246, 0.15) 0%, 
-    rgba(37, 99, 235, 0.2) 50%, 
-    rgba(29, 78, 216, 0.15) 100%);
+    rgba(59, 130, 246, 0.2) 0%, 
+    rgba(37, 99, 235, 0.25) 50%, 
+    rgba(29, 78, 216, 0.2) 100%);
 }
 
 .gradient-learn {
   background: linear-gradient(135deg, 
-    rgba(139, 92, 246, 0.15) 0%, 
-    rgba(124, 58, 237, 0.2) 50%, 
-    rgba(109, 40, 217, 0.15) 100%);
+    rgba(139, 92, 246, 0.2) 0%, 
+    rgba(124, 58, 237, 0.25) 50%, 
+    rgba(109, 40, 217, 0.2) 100%);
 }
 
 .gradient-mag {
   background: linear-gradient(135deg, 
-    rgba(16, 185, 129, 0.15) 0%, 
-    rgba(5, 150, 105, 0.2) 50%, 
-    rgba(4, 120, 87, 0.15) 100%);
+    rgba(16, 185, 129, 0.2) 0%, 
+    rgba(5, 150, 105, 0.25) 50%, 
+    rgba(4, 120, 87, 0.2) 100%);
 }
 
 .gradient-default {
   background: linear-gradient(135deg, 
-    rgba(107, 114, 128, 0.15) 0%, 
-    rgba(75, 85, 99, 0.2) 50%, 
-    rgba(55, 65, 81, 0.15) 100%);
+    rgba(107, 114, 128, 0.2) 0%, 
+    rgba(75, 85, 99, 0.25) 50%, 
+    rgba(55, 65, 81, 0.2) 100%);
 }
 
 /* Service Icon Container */

@@ -3,6 +3,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-landing',
@@ -25,6 +26,9 @@ export class LandingComponent implements OnInit, OnDestroy {
   imagesLoaded = 0;
   totalImages = 0;
   showContactModal = false;
+  mail: string = 'amatuncontact@gmail.com';
+  message: string = '';
+  status: string = '';
 
   // Navigation items
   navItems = [
@@ -32,13 +36,14 @@ export class LandingComponent implements OnInit, OnDestroy {
     { label: 'Services', href: '#services' },
     { label: 'Fonctionnalités', href: '#features' },
   ];
+  
+
 
   // Social links
   socialLinks = [
-    { name: 'Facebook', icon: 'fab fa-facebook', url: 'https://facebook.com/amatun' },
-    { name: 'Twitter', icon: 'fab fa-twitter', url: 'https://twitter.com/amatun' },
-    { name: 'Instagram', icon: 'fab fa-instagram', url: 'https://instagram.com/amatun' },
-    { name: 'LinkedIn', icon: 'fab fa-linkedin', url: 'https://linkedin.com/company/amatun' }
+    { name: 'Facebook', icon: 'fab fa-facebook', url: 'https://www.facebook.com/profile.php?id=61573350952299' },
+    { name: 'Instagram', icon: 'fab fa-instagram', url: 'https://www.instagram.com/dev_flow_studios?utm_source=ig_web_button_share_sheet&igsh=dXFldHowZDJiaGs2' },
+    { name: 'LinkedIn', icon: 'fab fa-linkedin', url: 'https://www.linkedin.com/company/dev-flow-studio/about/' }
   ];
 
   // Enhanced Floating particles
@@ -103,7 +108,9 @@ export class LandingComponent implements OnInit, OnDestroy {
       image: 'Learn.png',
       link: 'https://learn.amatun.com/',
       linkText: 'Commencer à apprendre',
-      gradient: 'from-purple-500 via-pink-400 to-blue-400'
+      gradient: 'from-purple-500 via-pink-400 to-blue-400',
+      comingSoon: true
+
     },
     {
       title: 'AMATUN MAG',
@@ -160,13 +167,36 @@ export class LandingComponent implements OnInit, OnDestroy {
     return gradientMap[service.title] || 'gradient-default';
   }
 
+  sendEmail() {
+    if (!this.message.trim()) {
+      this.status = '⚠️ Veuillez entrer un message.';
+      return;
+    }
+
+    emailjs.send(
+      'service_v1q583g',    // 🔹 Replace with EmailJS Service ID
+      'your_template_id',   // 🔹 Replace with EmailJS Template ID
+      {
+        message: this.message,
+        to_email: 'amatuncontact@gmail.com'
+      },
+      '0OseUEy5ohDs5fD1x'     // 🔹 Replace with EmailJS Public Key
+    )
+    .then((result: EmailJSResponseStatus) => {
+      this.status = '✅ Message envoyé avec succès !';
+      this.message = '';
+    }, (error) => {
+      this.status = '❌ Échec de l\'envoi. Réessayez.';
+    });
+  }
+  
   // Service statistics data
   getServiceStats(serviceTitle: string): { users: string, products: string, rating: string } {
     const statsMap: { [key: string]: { users: string, products: string, rating: string } } = {
       'AMATUN SHOP': { users: '25K+', products: '10K+', rating: '4.8' },
       'AMATUN CARS': { users: '15K+', products: '5K+', rating: '4.7' },
       'AMATUN LEARN': { users: '8K+', products: '200+', rating: '4.9' },
-     // 'AMATUN MAG': { users: '12K+', products: '1K+', rating: '4.6' }
+      'AMATUN MAG': { users: '12K+', products: '1K+', rating: '4.6' }
     };
     
     return statsMap[serviceTitle] || { users: '1K+', products: '100+', rating: '4.5' };

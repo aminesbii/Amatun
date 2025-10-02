@@ -46,7 +46,7 @@
 
       <div class="space-y-4">
         <!-- Email -->
-        <a href="mailto:aminesbii2@gmail.com"
+        <a href="https://mail.google.com/"
           class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 group hover:scale-[1.02]">
           <div
             class="w-12 h-12 rounded-xl bg-gradient-to-r from-yellow-400 to-red-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -57,7 +57,7 @@
           </div>
           <div class="flex-1">
             <p class="text-sm text-gray-400">Email</p>
-            <p class="text-white font-medium group-hover:text-red-400 transition-colors">amatun.com</p>
+            <p class="text-white font-medium group-hover:text-red-400 transition-colors">{{ mail }}</p>
           </div>
           <div
             class="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
@@ -68,7 +68,7 @@
         </a>
 
         <!-- Facebook -->
-        <a href="https://facebook.com/amatun" target="_blank"
+        <a href="https://www.instagram.com/amatun.shop/?utm_source=ig_web_button_share_sheet" target="_blank"
           class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 group hover:scale-[1.02]">
           <div
             class="w-12 h-12 rounded-xl  bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -90,7 +90,7 @@
         </a>
 
         <!-- Instagram -->
-        <a href="https://instagram.com/amatun" target="_blank"
+        <a href="https://www.instagram.com/amatun.shop/?utm_source=ig_web_button_share_sheet" target="_blank"
           class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 group hover:scale-[1.02]">
           <div
             class="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -105,28 +105,6 @@
           <div class="flex-1">
             <p class="text-sm text-gray-400">Instagram</p>
             <p class="text-white font-medium group-hover:text-pink-400 transition-colors">amatun</p>
-          </div>
-          <div
-            class="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </div>
-        </a>
-
-        <!-- LinkedIn -->
-        <a href="https://linkedin.com/company/amatun" target="_blank"
-          class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 group hover:scale-[1.02]">
-          <div
-            class="w-12 h-12 rounded-xl bg-gradient-to-r from-indigo-500 to-emerald-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </div>
-          <div class="flex-1">
-            <p class="text-sm text-gray-400">LinkedIn</p>
-            <p class="text-white font-medium group-hover:text-emerald-300 transition-colors">AMATUN</p>
           </div>
           <div
             class="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
@@ -319,8 +297,7 @@
             [ngClass]="getSimpleGradient(service)" [attr.data-index]="i" (click)="!service.comingSoon && onServiceCardClick(service)" [class.is-coming-soon]="service.comingSoon">
 
             <!-- Simple Background Gradient -->
-            <div class="absolute inset-0 rounded-2xl transition-all duration-500 group-hover:opacity-90 "
-              [ngClass]="getSimpleGradient(service)"></div>
+            <div class="absolute inset-0 rounded-2xl transition-all duration-500 group-hover:opacity-90 " [ngClass]="getSimpleGradient(service)"></div>
 
             <!-- Card Content: centered icon above title -->
             <div class="relative z-10 flex flex-col items-center text-center h-full">
@@ -379,7 +356,7 @@
               <img [src]="service.image" [alt]="service.title + ' icon'" class="overlay-bg-icon" />
               <div class="coming-soon-inner">
                 <h3 class="coming-title">{{ service.title }}</h3>
-                <div class="coming-soon-badge bg-gradient-to-r from-emerald-400 to-green-500 text-black px-3 py-1 rounded-full text-xs font-semibold mb-2">
+                <div class="coming-soon-badge bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-xs font-semibold mb-2">
                   Bientôt disponible
                 </div>
               </div>
@@ -458,7 +435,7 @@
           </div>
 
           <div class="mt-6">
-            <a href="https://devflowstudio.site/" target="_blank"
+            <a href="https://dfsteam.site/" target="_blank"
               class="cta-button-primary w-full text-base font-semibold px-8 py-4 rounded-full transition-all duration-300 transform group relative overflow-hidden inline-flex items-center justify-center">
               <span class="relative z-10 flex items-center">
                 DevFlowStudio.site
@@ -501,57 +478,64 @@
   </section>
 
   <!-- Enhanced Footer -->
-  <footer class="relative bg-black text-white py-16 overflow-hidden">
-    <!-- Background Glow Effects -->
-    <div
-      class="absolute w-[500px] h-[500px] opacity-20 bg-orange-400/25 blur-[200px] -top-40 -left-40 rounded-full z-0 animate-glow-pulse">
-    </div>
-    <div
-      class="absolute w-[500px] h-[500px] opacity-20 bg-yellow-400/20 blur-[200px] -bottom-40 -right-40 rounded-full z-0 animate-glow-pulse delay-3000">
-    </div>
+<footer class="relative bg-black text-white py-16 overflow-hidden">
+  <!-- Background Glow Effects -->
+  <div class="absolute w-[500px] h-[500px] opacity-20 bg-orange-400/25 blur-[200px] -top-40 -left-40 rounded-full z-0 animate-glow-pulse"></div>
+  <div class="absolute w-[500px] h-[500px] opacity-20 bg-yellow-400/20 blur-[200px] -bottom-40 -right-40 rounded-full z-0 animate-glow-pulse delay-3000"></div>
 
-    <!-- Content Container -->
-    <div class="relative max-w-7xl mx-auto px-6 sm:px-12 z-10">
-      <!-- Top Section -->
-      <div class="grid md:grid-cols-2 gap-12 mb-16">
-        <!-- Message Form -->
-        <div>
-          <h3 class="text-xl font-semibold mb-6 tracking-tight">Envoyer un message</h3>
-          <form class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-            <input type="text" placeholder="Votre message..."
-              class="flex-1 w-full px-4 py-3 rounded-full bg-white/10 border border-white/20 placeholder-white/70 text-white focus:outline-none focus:ring-1 focus:ring-yellow-500 transition tracking-wide text-sm" />
-            <button type="submit"
-              class="px-6 py-3 bg-gradient-to-r text-black from-yellow-400 to-orange-400 rounded-full hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 transform hover:scale-105 font-medium tracking-wide text-sm">
-              Envoyer
-            </button>
-          </form>
-        </div>
-
-        <!-- About Section -->
-        <div>
-          <h3 class="text-xl font-semibold mb-6 tracking-tight">À propos</h3>
-          <p class="text-gray-400 leading-relaxed tracking-wide text-base">
-            AMATUN regroupe shopping, apprentissage et actualité pour une expérience unifiée et fluide sur une seule
-            plateforme.
-          </p>
-        </div>
+  <!-- Content Container -->
+  <div class="relative max-w-7xl mx-auto px-6 sm:px-12 z-10">
+    <!-- Top Section -->
+    <div class="grid md:grid-cols-2 gap-12 mb-16">
+      <!-- Message Form -->
+      <div>
+        <h3 class="text-xl font-semibold mb-6 tracking-tight">Envoyer un message</h3>
+        <form (ngSubmit)="sendEmail()" class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <input
+            type="text"
+            placeholder="Votre message..."
+            [(ngModel)]="message"
+            name="message"
+            required
+            class="flex-1 w-full px-4 py-3 rounded-full bg-white/10 border border-white/20 placeholder-white/70 text-white focus:outline-none focus:ring-1 focus:ring-yellow-500 transition tracking-wide text-sm"
+          />
+          <button
+            type="submit"
+            class="px-6 py-3 bg-gradient-to-r text-black from-yellow-400 to-orange-400 rounded-full hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 transform hover:scale-105 font-medium tracking-wide text-sm"
+          >
+            Envoyer
+          </button>
+        </form>
+        <p *ngIf="status" class="mt-3 text-sm text-gray-300">{{ status }}</p>
       </div>
 
-      <!-- Divider -->
-      <div class="border-t border-white/10 mb-8"></div>
-
-      <!-- Bottom Bar -->
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
-        <p class="text-gray-400 tracking-wide">&copy; 2025 <span class="font-semibold text-white">AMATUN</span>. Tous
-          droits réservés.</p>
-        <div class="flex gap-6">
-          <a *ngFor="let social of socialLinks" [href]="social.url"
-            class="social-link text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 flex items-center gap-2 tracking-wide">
-            <i [class]="social.icon"></i>
-            {{ social.name }}
-          </a>
-        </div>
+      <!-- About Section -->
+      <div>
+        <h3 class="text-xl font-semibold mb-6 tracking-tight">À propos</h3>
+        <p class="text-gray-400 leading-relaxed tracking-wide text-base">
+          AMATUN regroupe shopping, apprentissage et actualité pour une expérience unifiée
+          et fluide sur une seule plateforme.
+        </p>
       </div>
     </div>
-  </footer>
+
+    <!-- Divider -->
+    <div class="border-t border-white/10 mb-8"></div>
+
+    <!-- Bottom Bar -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
+      <p class="text-gray-400 tracking-wide">
+        &copy; 2025 <span class="font-semibold text-white">DFS</span>. Tous droits réservés.
+      </p>
+      <div class="flex gap-6">
+        <a *ngFor="let social of socialLinks" [href]="social.url"
+          class="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 flex items-center gap-2 tracking-wide">
+          <i [class]="social.icon"></i>
+          {{ social.name }}
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </div>
